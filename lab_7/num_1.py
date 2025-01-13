@@ -1,15 +1,15 @@
 class Employee:
-    def __init__(self, name, id_1):
+    def __init__(self, name, id):
         self.name = name
-        self.id_1 = id_1
+        self.id = id
 
     def get_info(self):
-        return f'Имя: {self.name}, ID: {self.id_1}'
+        return f'Имя: {self.name}, ID: {self.id}'
 
 
 class Manager(Employee):
-    def __init__(self, name, id_1, department):
-        Employee.__init__(self, name, id_1)
+    def __init__(self, name, id, department):
+        Employee.__init__(self, name, id)
         self.department = department
 
     def manage_project(self):
@@ -17,8 +17,8 @@ class Manager(Employee):
 
 
 class Technician(Employee):
-    def __init__(self, name, id_1, specialization):
-        super().__init__(name, id_1)
+    def __init__(self, name, id, specialization):
+        super().__init__(name, id)
         self.specialization = specialization
 
     def perform_maintenance(self):
@@ -26,8 +26,8 @@ class Technician(Employee):
 
 
 class TechManager(Manager, Technician):
-    def __init__(self, name, id_1, department, specialization):
-        super().__init__(name, id_1, department)
+    def __init__(self, name, id, department, specialization):
+        super().__init__(name, id, department)
         self.specialization = specialization
         self.sot = list()
 
